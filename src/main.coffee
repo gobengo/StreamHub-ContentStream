@@ -4,7 +4,11 @@ define (require, exports, module) ->
     $ = require('jquery')
     Stream = require('streamhub-sdk/stream')
 
-
+    ###
+    StreamHubContentStream
+    Read raw data from a LivefyreStream and convert it
+        into a Stream of Content
+    ###
     class SHContentStream extends Stream
         constructor: (livefyreStream) ->
             if not livefyreStream
@@ -13,6 +17,11 @@ define (require, exports, module) ->
             @livefyreStream = livefyreStream
             return this
 
+        ###
+        Required by Stream Base
+        Start the LivefyreStream, read any data when it's
+            readable, and @_push it to emit our own readable event
+        ###
         _read: () ->
             @livefyreStream.on 'error', (err) =>
                 @emit 'error', err
