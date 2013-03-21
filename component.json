@@ -1,0 +1,12 @@
+{
+  "name": "streamhub-contentstream",
+  "version": "0.0.0",
+  "main": [
+    "./src/main.js"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.5",
+    "streamhub-sdk": "git://github.com/genehallman/streamhub-sdk.git",
+    "jasmine-jquery": "*"
+  }
+}
